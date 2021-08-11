@@ -1,12 +1,14 @@
-echo "------1/3 git checkout------"
+echo "------1/4 git checkout------"
 git checkout master
-git branch -D gh-pages
+git branch -D gh-pages;git branch gh-pages
 git checkout gh-pages
-echo "------2/3 Preparing files------"
-ls |grep -v dist|xargs rm -r
+echo "------2/4 Yarn build------"
+yarn build
+echo "------3/4 Preparing files------"
+ls | grep -v dist | xargs rm -r
 cp ./dist/* ./
 rm -r ./dist
-echo "------3/3 Push to github gh-pages branch------"
+echo "------4/4 Push to github gh-pages branch------"
 git add .
 git commit -m "Auto Deployed."
 git remote add origin git@github.com:Happievening/webpack-demo.git
