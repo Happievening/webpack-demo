@@ -1,9 +1,9 @@
-echo "------1/4 git checkout------"
+echo "------1/4 Yarn build------"
+yarn build
+echo "------2/4 git checkout------"
 git checkout master
 git branch -D gh-pages;git branch gh-pages
 git checkout gh-pages
-echo "------2/4 Yarn build------"
-yarn build
 echo "------3/4 Preparing files------"
 ls | grep -v dist | xargs rm -r
 cp ./dist/* ./
