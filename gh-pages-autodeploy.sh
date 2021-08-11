@@ -6,6 +6,7 @@ echo "------2/4 Yarn build------"
 yarn build
 echo "------3/4 Preparing files------"
 ls | grep -v dist | xargs rm -r
+rm .gitignore
 cp ./dist/* ./
 rm -r ./dist
 echo "------4/4 Push to github gh-pages branch------"
