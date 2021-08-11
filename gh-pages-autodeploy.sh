@@ -1,3 +1,5 @@
+echo "------0/4 Update source code------"
+sh ./autoupdate.sh
 echo "------1/4 Yarn build------"
 yarn && yarn build
 echo "------2/4 git checkout------"
